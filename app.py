@@ -190,16 +190,18 @@ def main():
 
 def select_mode(key, mode):
     number = -1
-    if 48 <= key <= 57:  # 0 ~ 9
-        number = key - 48
+    # if 48 <= key <= 57:  # 0 ~ 9
+    #     number = key - 48
     if 65 <= key <= 90:  # A ~ B
-        number = key - 55
+        number = key - 65
     if key == 110:  # n
         mode = 0
     if key == 107:  # k
         mode = 1
     if key == 104:  # h
         mode = 2
+    if key == 100:  # d
+        mode = 3
     return number, mode
 
 
@@ -300,6 +302,11 @@ def logging_csv(number, mode, landmark_list, point_history_list):
         with open(csv_path, "a", newline="") as f:
             writer = csv.writer(f)
             writer.writerow([number, *point_history_list])
+    if mode == 3 and (0 <= number <= 35):
+        csv_path = "model/keypoint_classifier/keypoint.csv"
+        with open(csv_path, "a", newline="") as f:
+            writer = csv.writer(f)
+            writer.writerow([number, *landmark_list])
     return
 
 
