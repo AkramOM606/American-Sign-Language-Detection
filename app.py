@@ -147,7 +147,7 @@ def main():
             key = cv.waitKey(1000)
 
             # Looping through each folder of the dataset
-            datasetdir = "model/dataset"
+            datasetdir = "model/dataset/dataset 1"
             imglabel = -1
             for imgclass in os.listdir(datasetdir):
                 imglabel += 1
@@ -159,40 +159,48 @@ def main():
                         img = cv.imread(imgpath)
                         debug_img = copy.deepcopy(img)
 
-                        img.flags.writeable = False
-                        results = hands.process(img)
-                        img.flags.writeable = True
+                        for _ in [1, 2]:
+                            img.flags.writeable = False
+                            results = hands.process(img)
+                            img.flags.writeable = True
 
-                        if results.multi_hand_landmarks is not None:
-                            for hand_landmarks, handedness in zip(
-                                results.multi_hand_landmarks, results.multi_handedness
-                            ):
-                                # Bounding box calculation
-                                brect = calc_bounding_rect(debug_img, hand_landmarks)
-                                # Landmark calculation
-                                landmark_list = calc_landmark_list(
-                                    debug_img, hand_landmarks
-                                )
+                            if results.multi_hand_landmarks is not None:
+                                for hand_landmarks, handedness in zip(
+                                    results.multi_hand_landmarks,
+                                    results.multi_handedness,
+                                ):
+                                    # Bounding box calculation
+                                    brect = calc_bounding_rect(
+                                        debug_img, hand_landmarks
+                                    )
+                                    # Landmark calculation
+                                    landmark_list = calc_landmark_list(
+                                        debug_img, hand_landmarks
+                                    )
 
-                                # Conversion to relative coordinates / normalized coordinates
-                                pre_processed_landmark_list = pre_process_landmark(
-                                    landmark_list
-                                )
-                                pre_processed_point_history_list = (
-                                    pre_process_point_history(debug_img, point_history)
-                                )
-                                # Write to the dataset file
-                                logging_csv(
-                                    imglabel,
-                                    mode,
-                                    pre_processed_landmark_list,
-                                    pre_processed_point_history_list,
-                                )
-
+                                    # Conversion to relative coordinates / normalized coordinates
+                                    pre_processed_landmark_list = pre_process_landmark(
+                                        landmark_list
+                                    )
+                                    pre_processed_point_history_list = (
+                                        pre_process_point_history(
+                                            debug_img, point_history
+                                        )
+                                    )
+                                    # Write to the dataset file
+                                    logging_csv(
+                                        imglabel,
+                                        mode,
+                                        pre_processed_landmark_list,
+                                        pre_processed_point_history_list,
+                                    )
+                            img = cv.flip(img, 0)
                     except Exception as e:
                         print(f"Issue with image {imgpath}")
+
                 print(f"Num of image of the class {imglabel} is : {numofimgs}")
             mode = 1
+            print("End of job!")
             break
         else:
             if results.multi_hand_landmarks is not None:
