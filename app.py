@@ -3,19 +3,13 @@ import csv
 import copy
 import argparse
 import itertools
-from collections import Counter
-from collections import deque
 
 import cv2 as cv
-from PIL import Image
 import numpy as np
 import mediapipe as mp
 
-import time
-
-from utils import CvFpsCalc
-from model import KeyPointClassifier
-from model import PointHistoryClassifier
+from utils.cvfpscalc import CvFpsCalc
+from model.keypoint_classifier.keypoint_classifier import KeyPointClassifier
 
 
 def get_args():
@@ -110,7 +104,7 @@ def main():
         results = hands.process(image)
         image.flags.writeable = True
 
-        if mode == 3:
+        if mode == 2:
             # Loading image while processing the dataset
             loading_img = cv.imread("./assets/om606.png", cv.IMREAD_COLOR)
 
@@ -221,18 +215,14 @@ def main():
 
 def select_mode(key, mode):
     number = -1
-    # if 48 <= key <= 57:  # 0 ~ 9
-    #     number = key - 48
     if 65 <= key <= 90:  # A ~ B
         number = key - 65
-    if key == 110:  # n
+    if key == 110:  # n (Inference Mode)
         mode = 0
-    if key == 107:  # k
+    if key == 107:  # k (Capturing Landmark From Camera Mode)
         mode = 1
-    if key == 104:  # h
+    if key == 100:  # d (Capturing Landmarks From Provided Dataset Mode)
         mode = 2
-    if key == 100:  # d
-        mode = 3
     return number, mode
 
 
@@ -299,12 +289,7 @@ def pre_process_landmark(landmark_list):
 def logging_csv(number, mode, landmark_list):
     if mode == 0:
         pass
-    if mode == 1 and (0 <= number <= 35):
-        csv_path = "model/keypoint_classifier/keypoint.csv"
-        with open(csv_path, "a", newline="") as f:
-            writer = csv.writer(f)
-            writer.writerow([number, *landmark_list])
-    if mode == 3 and (0 <= number <= 35):
+    if (mode == 1 or mode == 2) and (0 <= number <= 35):
         csv_path = "model/keypoint_classifier/keypoint.csv"
         with open(csv_path, "a", newline="") as f:
             writer = csv.writer(f)
@@ -637,7 +622,10 @@ def draw_info(image, fps, mode, number):
         cv.LINE_AA,
     )
 
-    mode_string = ["Logging Key Point", "Logging Point History"]
+    mode_string = [
+        "Logging Key Point",
+        "Capturing Landmarks From Provided Dataset Mode",
+    ]
     if 1 <= mode <= 2:
         cv.putText(
             image,
