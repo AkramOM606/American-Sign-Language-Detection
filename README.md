@@ -24,6 +24,10 @@ Acknowledgements
 * TensorFlow
 * Pillow
 * NumPy
+* Pandas
+* Seaborn
+* Scikit-learn
+* Matplotlib
 * Tensorflow
 ##### Note: If you face an error during training from the line converting to the tflite model, use TensorFlow v2.16.1.
 
