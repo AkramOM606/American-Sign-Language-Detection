@@ -21,7 +21,6 @@ Acknowledgements
 # Requirements:
 * OpenCV
 * MediaPipe
-* TensorFlow
 * Pillow
 * NumPy
 * Pandas
