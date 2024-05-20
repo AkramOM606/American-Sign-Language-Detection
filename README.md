@@ -28,6 +28,20 @@ Acknowledgements
 * Scikit-learn
 * Matplotlib
 * Tensorflow
-##### Note: If you face an error during training from the line converting to the tflite model, use TensorFlow v2.16.1.
+> Note: If you face an error during training from the line converting to the tflite model, use TensorFlow v2.16.1.
 
+# Installation:
+1. Clone the Repository:
+```
+git clone https://github.com/AkramOM606/American-Sign-Language-Detection.git
+cd asl-detection-ai
+```
+3. Install Dependencies:
+```
+pip install -r requirements.txt
+```
+4. Run the Application:
+```
+python main.py
+```
 
