@@ -24,7 +24,7 @@ Acknowledgements
 * TensorFlow
 * Pillow
 * NumPy
-* Tensorflow v2.16.1 (During Training if you face an error from the line converting to tflite model use tensorflow v2.16.1)
-
+* Tensorflow
+##### Note: If you face an error during training from the line converting to the tflite model, use TensorFlow v2.16.1.
 
 
