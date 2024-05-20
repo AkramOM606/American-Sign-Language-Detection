@@ -34,7 +34,7 @@ Acknowledgements
 1. Clone the Repository:
 ```
 git clone https://github.com/AkramOM606/American-Sign-Language-Detection.git
-cd asl-detection-ai
+cd American-Sign-Language-Detection
 ```
 3. Install Dependencies:
 ```
@@ -44,4 +44,20 @@ pip install -r requirements.txt
 ```
 python main.py
 ```
+# Directory (Project Layout)
 
+# Training
+
+# Usage ?
+
+# Contributing
+We welcome contributions to enhance this project! Feel free to:
+
+1. Fork the repository.
+2. Create a new branch for your improvements.
+3. Make your changes and commit them.
+4. Open a pull request to propose your contributions.
+5. We'll review your pull request and provide feedback promptly.
+
+# License
+This project is licensed under the MIT License: https://opensource.org/licenses/MIT (see LICENSE.md for details).
