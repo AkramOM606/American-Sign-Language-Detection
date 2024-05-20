@@ -50,3 +50,14 @@ python main.py
 
 # Usage ?
 
+# Contributing
+We welcome contributions to enhance this project! Feel free to:
+
+1. Fork the repository.
+2. Create a new branch for your improvements.
+3. Make your changes and commit them.
+4. Open a pull request to propose your contributions.
+5. We'll review your pull request and provide feedback promptly.
+
+# License
+This project is licensed under the MIT License: https://opensource.org/licenses/MIT (see LICENSE.md for details).
