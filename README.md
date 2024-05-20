@@ -34,7 +34,7 @@ Acknowledgements
 1. Clone the Repository:
 ```
 git clone https://github.com/AkramOM606/American-Sign-Language-Detection.git
-cd asl-detection-ai
+cd American-Sign-Language-Detection
 ```
 3. Install Dependencies:
 ```
@@ -44,4 +44,9 @@ pip install -r requirements.txt
 ```
 python main.py
 ```
+# Directory (Project Layout)
+
+# Training
+
+# Usage ?
 
