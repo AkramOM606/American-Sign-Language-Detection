@@ -88,10 +88,14 @@ Activate the automatic key point saving mode by pressing "d", which will change 
 
 2. Training
 
-Launch the Jupyter Notebook "[keypoint_classification.ipynb](keypoint_classification.ipynb)" and run the cells sequentially from the beginning to the end. If you wish to alter the number of classes in the training data, adjust the value of "NUM_CLASSES = 26" and make sure to update the labels in the "[keypoint_classifier_label.csv](model/keypoint_classifier/keypoint_classifier_label.csv)" file accordingly.
+Launch the Jupyter Notebook "[keypoint_classification.ipynb](keypoint_classification.ipynb)" and run the cells sequentially from the beginning to the end.<br>
+If you wish to alter the number of classes in the training data, adjust the value of "NUM_CLASSES = 26" and make sure to update the labels in the "[keypoint_classifier_label.csv](model/keypoint_classifier/keypoint_classifier_label.csv)" file accordingly.
 
- 
+<p align="center>
+   <img src="https://github.com/AkramOM606/American-Sign-Language-Detection/assets/162604610/0a4c4ce9-4afa-4852-a410-2b9bb280e4b8"><br>
+<p/>
 
+![confusion_matrix](https://github.com/AkramOM606/American-Sign-Language-Detection/assets/162604610/0a4c4ce9-4afa-4852-a410-2b9bb280e4b8)
 
 
 # Usage ?
