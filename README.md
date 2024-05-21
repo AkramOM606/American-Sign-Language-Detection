@@ -4,16 +4,19 @@ This ASL Detector is a cutting-edge AI-powered application that uses computer vi
 
 # Usage
 By default, when you launch app.py, the inference mode is active. It can also be manually activated in other modes by pressing “n”.
-![ASL](https://github.com/AkramOM606/American-Sign-Language-Detection/assets/162604610/16ed949f-5aa8-4ed4-b49e-a7eb365c8923)
+
+<p align="center">
+   <img src="https://github.com/AkramOM606/American-Sign-Language-Detection/assets/162604610/16ed949f-5aa8-4ed4-b49e-a7eb365c8923" width="60%">
+</p>
 
 # Table of Contents
 
-2. Features
+1. Features
+2. Requirements
 3. Installation
-   Model Training
-   Contributing
-   License
-   Acknowledgements
+4. Model Training
+5. Contributing
+6. License
 
 # Features
 
@@ -58,8 +61,6 @@ pip install -r requirements.txt
 ```
 python main.py
 ```
-
-# Directory (Project Layout)
 
 # Model Training
 
