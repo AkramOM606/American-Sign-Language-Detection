@@ -107,9 +107,6 @@ def main():
         results = hands.process(image)
         image.flags.writeable = True
 
-
-        key = cv.waitKey(1000)
-
         if mode == 2:
             # Loading image while processing the dataset
             loading_img = cv.imread("./assets/om606.png", cv.IMREAD_COLOR)
