@@ -12,6 +12,9 @@ from utils.cvfpscalc import CvFpsCalc
 from model.keypoint_classifier.keypoint_classifier import KeyPointClassifier
 
 
+datasetdir = "model/dataset/dataset 1"
+
+
 def get_args():
     parser = argparse.ArgumentParser()
 
@@ -104,6 +107,24 @@ def main():
         results = hands.process(image)
         image.flags.writeable = True
 
+        # Loading image while processing the dataset
+        loading_img = cv.imread("./assets/om606.png", cv.IMREAD_COLOR)
+
+        cv.putText(
+            loading_img,
+            "Loading...",
+            (20, 50),
+            cv.FONT_HERSHEY_SIMPLEX,
+            1.0,
+            (255, 255, 255),
+            4,
+            cv.LINE_AA,
+        )
+
+        cv.imshow("Hand Gesture Recognition", loading_img)
+
+        key = cv.waitKey(1000)
+
         if mode == 2:
             # Loading image while processing the dataset
             loading_img = cv.imread("./assets/om606.png", cv.IMREAD_COLOR)
@@ -124,7 +145,6 @@ def main():
             key = cv.waitKey(1000)
 
             # Looping through each folder of the dataset
-            datasetdir = "model/dataset/dataset 1"
             imglabel = -1
             for imgclass in os.listdir(datasetdir):
                 imglabel += 1
