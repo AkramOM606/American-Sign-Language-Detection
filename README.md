@@ -12,11 +12,11 @@ By default, when you launch app.py, the inference mode is active. It can also be
 # Table of Contents
 
 1. [Features](#Features)
-2. Requirements
-3. Installation
-4. Model Training
-5. Contributing
-6. License
+2. [Requirements](#Requirements)
+3. [Installation](#Installation)
+4. [Model Training](#Model-Training)
+5. [Contributing](#Contributing)
+6. [License](#License)
 
 # Features
 
