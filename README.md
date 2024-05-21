@@ -60,7 +60,7 @@ python main.py
 # Directory (Project Layout)
 
 # Model Training
-If you wish to train the model on your own dataset, follow these steps:
+If you wish to train the model on your dataset, follow these steps:
 
 1. Data Collection
 
@@ -69,7 +69,9 @@ If you wish to train the model on your own dataset, follow these steps:
 Activate the manual key point saving mode by pressing "k", which will be indicated as “MODE: Logging Key Point”.<br>
 If you press any uppercase letter from “A” to “Z”, the key points will be recorded and added to the “model/keypoint_classifier/keypoint.csv” file as demonstrated below.
 
-![image](https://github.com/AkramOM606/American-Sign-Language-Detection/assets/162604610/e0393472-f7c6-41f7-b5a6-3814dc4b7044)
+<p align="center">
+   <img src="https://github.com/AkramOM606/American-Sign-Language-Detection/assets/162604610/e0393472-f7c6-41f7-b5a6-3814dc4b7044">
+<p/>
 
 > [!NOTE]
 > Each time you press the uppercase letter a single entry point is appended to keypoint.csv.
@@ -77,8 +79,9 @@ If you press any uppercase letter from “A” to “Z”, the key points will b
    * Automated Key Points Data Capturing
 
 Activate the automatic key point saving mode by pressing "d", which will change the content of the camera window to an image of OM606.
-
-![image](https://github.com/AkramOM606/American-Sign-Language-Detection/assets/162604610/f4b11849-7fd9-423b-aee3-efa31f300159)
+<p align="center">
+   <img src="https://github.com/AkramOM606/American-Sign-Language-Detection/assets/162604610/f4b11849-7fd9-423b-aee3-efa31f300159" width="70%"><br>
+<p/>
 
 > [!NOTE]
 > You need to specify the dataset directory in ```app.py```
