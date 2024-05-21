@@ -32,7 +32,9 @@ This ASL Detector is a cutting-edge AI-powered application that uses computer vi
 - Scikit-learn
 - Matplotlib
 - Tensorflow
-  > Note: If you face an error during training from the line converting to the tflite model, use TensorFlow v2.16.1.
+
+> [!IMPORTANT]
+> If you face an error during training from the line converting to the tflite model, use TensorFlow v2.16.1.
 
 # Installation:
 
@@ -57,7 +59,37 @@ python main.py
 
 # Directory (Project Layout)
 
-# Training
+# Model Training
+If you wish to train the model on your own dataset, follow these steps:
+
+1. Data Collection
+
+   * Manual Key Points Data Capturing
+
+Activate the manual key point saving mode by pressing "k", which will be indicated as “MODE: Logging Key Point”.<br>
+If you press any uppercase letter from “A” to “Z”, the key points will be recorded and added to the “model/keypoint_classifier/keypoint.csv” file as demonstrated below.
+
+![image](https://github.com/AkramOM606/American-Sign-Language-Detection/assets/162604610/e0393472-f7c6-41f7-b5a6-3814dc4b7044)
+
+> [!NOTE]
+> Each time you press the uppercase letter a single entry point is appended to keypoint.csv.
+
+   * Automated Key Points Data Capturing
+
+Activate the automatic key point saving mode by pressing "d", which will change the content of the camera window to an image of OM606.
+
+![image](https://github.com/AkramOM606/American-Sign-Language-Detection/assets/162604610/f4b11849-7fd9-423b-aee3-efa31f300159)
+
+> [!NOTE]
+> You need to specify the dataset directory in ```app.py```
+
+2. Training
+
+Launch the Jupyter Notebook "[keypoint_classification.ipynb](keypoint_classification.ipynb)" and run the cells sequentially from the beginning to the end. If you wish to alter the number of classes in the training data, adjust the value of "NUM_CLASSES = 26" and make sure to update the labels in the "[keypoint_classifier_label.csv](model/keypoint_classifier/keypoint_classifier_label.csv)" file accordingly.
+
+ 
+
+
 
 # Usage ?
 
